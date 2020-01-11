@@ -1,23 +1,10 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class University {
     private String nameOfUniversity;
-    private int numberOfFaculties;
     private Faculty[] faculties;
     private Scanner scanner = new Scanner(System.in);
 
-    public int getNumberOfFaculties() {
-        return numberOfFaculties;
-    }
-
-    public void setNumberOfFaculties(int numberOfFaculties) {
-        this.numberOfFaculties = numberOfFaculties;
-    }
-
-    public String getNameOfUniversity() {
-        return nameOfUniversity;
-    }
 
     public void setNameOfUniversity(String nameOfUniversity) {
         this.nameOfUniversity = nameOfUniversity;
@@ -26,9 +13,9 @@ public class University {
     public void initializeFaculties(int numberOfFaculties) {
         faculties = new Faculty[numberOfFaculties];
         for (int i = 0; i < numberOfFaculties ; i++) {
-            System.out.print("Please enter the name of faculty " + (i + 1) + ": ");
+            System.out.println("Please enter the name of faculty " + (i + 1) + ": ");
             faculties[i] = new Faculty();
-            faculties[i].setNameOfFaculty(scanner.nextLine());
+            faculties[i].setNameOfFaculty(scanner.next());
             System.out.print("Please enter the number of groups in faculty " + faculties[i].getNameOfFaculty() + ": ");
             faculties[i].initializeGroups(scanner.nextInt());
         }
@@ -44,7 +31,6 @@ public class University {
             }
         }
         return faculties[indexOfNecessaryFaculty].getAveragePointOfStudent(numberOfGroup,nameOfStudent);
-
     }
 
     public double getAverageOfConcreteSubjectOfConcreteGroup(String nameOfSubject,int numberOfGroup,String nameOfFaculty){
@@ -56,7 +42,6 @@ public class University {
                 break;
             }
         }
-
         return faculties[indexOfNecessaryFaculty].getAverageOfConcreteSubjectOfConcreteGroup(numberOfGroup,nameOfSubject);
     }
 
@@ -78,6 +63,14 @@ public class University {
         for (int i = 0; i < faculties.length; i++) {
             averagePointOfSubjectForUniversity += faculties[i].getAveragePointOfSubjectForFaculty(nameOfSubject);
         }
-        return averagePointOfSubjectForUniversity;
+        return averagePointOfSubjectForUniversity/faculties.length;
     }
+
+//    public int checkForNumberOfFacultiesTeachingSubject(String nameOfSubject) {
+//        for (int i = 0; i < faculties.length; i++) {
+//
+//        }
+//
+//        return 0;
+//    }
 }

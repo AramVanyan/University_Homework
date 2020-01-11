@@ -65,6 +65,6 @@ public class Group {
             }
         }
 
-        return averagePointOfSubject;
+        return averagePointOfSubject/students.length;
     }
 }

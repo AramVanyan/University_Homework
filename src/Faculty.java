@@ -6,14 +6,6 @@ public class Faculty {
     private Group[] groups;
     private Scanner scanner = new Scanner(System.in);
 
-    public int getNumberOfGroups() {
-        return numberOfGroups;
-    }
-
-    public void setNumberOfGroups(int numberOfGroups) {
-        this.numberOfGroups = numberOfGroups;
-    }
-
     public String getNameOfFaculty() {
         return nameOfFaculty;
     }
@@ -23,8 +15,9 @@ public class Faculty {
     }
 
     public void initializeGroups(int numberOfGroups) {
-        groups = new Group[numberOfGroups];
-        for (int i = 0; i < numberOfGroups; i++) {
+        this.numberOfGroups = numberOfGroups;
+        groups = new Group[this.numberOfGroups];
+        for (int i = 0; i < this.numberOfGroups; i++) {
             groups[i] = new Group();
             groups[i].setNumberOfGroup(i + 1);
         }
@@ -49,6 +42,8 @@ public class Faculty {
             averagePointOfSubjectForFaculty += groups[i].getAverageOfConcreteSubject(nameOfSubject);
         }
 
-        return averagePointOfSubjectForFaculty;
+        return averagePointOfSubjectForFaculty/groups.length;
     }
+
+//    public
 }

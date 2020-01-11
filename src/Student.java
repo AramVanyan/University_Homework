@@ -58,7 +58,7 @@ public class Student {
             }
         }
 
-        return indexOfMarkInCorrespondingArray;
+        return marks[indexOfMarkInCorrespondingArray];
     }
 
     public void addMark(int mark) {
