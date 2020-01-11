@@ -87,7 +87,7 @@ public class Student {
         for (int i = 1; i < numberOfSubjects ; i++) {
             System.out.print("Please enter the name of a subject: ");
             addSubject(scanner.nextLine());
-            System.out.println("Please enter the mark of a subject: ");
+            System.out.print("Please enter the mark of a subject: ");
             addMark(CheckForWrongInput.checkForWrongInput("marks"));
         }
     }

@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Faculty {
@@ -25,17 +24,17 @@ public class Faculty {
 
     public void initializeGroups(int numberOfGroups) {
         groups = new Group[numberOfGroups];
-        for (int i = 0; i < numberOfGroups ; i++) {
+        for (int i = 0; i < numberOfGroups; i++) {
             groups[i] = new Group();
             groups[i].setNumberOfGroup(i + 1);
         }
-        for (int i = 0; i < numberOfGroups ; i++) {
+        for (int i = 0; i < numberOfGroups; i++) {
             System.out.print("Please enter the number of students in group " + (i + 1) + ": ");
             groups[i].initializeStudents(CheckForWrongInput.checkForWrongInput("groups"));
         }
     }
 
-    public double getAveragePointOfStudent(int numberOfGroup,String nameOfStudent){
+    public double getAveragePointOfStudent(int numberOfGroup,String nameOfStudent) {
         return groups[numberOfGroup-1].getAveragePointOfStudent(nameOfStudent);
     }
 

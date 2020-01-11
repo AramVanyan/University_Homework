@@ -30,23 +30,19 @@ public class Group {
         students = new Student[numberOfStudents];
 
         for (int i = 0; i < numberOfStudents ; i++) {
-
             System.out.print("Please enter the name of a student: ");
             name = scanner.nextLine();
-            System.out.print("Enter the number of subjects: ");
+            System.out.print("Please enter the number of subjects: ");
             numberOfSubjects = CheckForWrongInput.checkForWrongInput("subjects");
-            System.out.print("Enter the name of a subject: ");
+            System.out.print("Please enter the name of a subject: ");
             subject = scanner.nextLine();
-            System.out.print("Enter the mark of a subject: ");
+            System.out.print("Please enter the mark of a subject: ");
             mark = CheckForWrongInput.checkForWrongInput("marks");
             students[i] = new Student.StudentBuilder(name,subject,mark).build();
             if(numberOfSubjects > 1) {
                 students[i].initializeSubjects(numberOfSubjects);
             }
         }
-
-
-
     }
 
     public double getAveragePointOfStudent(String nameOfStudent){
@@ -57,8 +53,6 @@ public class Group {
                 indexOfNecessaryStudent = i;
             }
         }
-
-
         return students[indexOfNecessaryStudent].getAveragePointOfStudent();
     }
 

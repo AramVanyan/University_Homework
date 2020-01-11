@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class CheckForWrongInput {
+    private static Scanner scanner = new Scanner(System.in);
+    private static int input;
     public static int checkForWrongInput(String nameOfSpecificGroup){
-        int input;
-        Scanner scanner = new Scanner(System.in);
         while(true){
             try {
                 input = Integer.parseInt(scanner.nextLine());
@@ -18,6 +18,16 @@ public class CheckForWrongInput {
                     return input;
                 }
             } catch (NumberFormatException e){
+                System.out.print("Please enter a number: ");
+            }
+        }
+    }
+    public static int checkForWrongInput() {
+        while (true) {
+            try {
+                input = Integer.parseInt(scanner.nextLine());
+                return input;
+            } catch (NumberFormatException e) {
                 System.out.print("Please enter a number: ");
             }
         }
