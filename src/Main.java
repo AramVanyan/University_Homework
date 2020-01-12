@@ -64,19 +64,19 @@ public class Main {
                     System.out.println();
                     break;
                 case 2:
-                    System.out.print("Enter the name of faculty: ");
+                    System.out.println("Enter the name of faculty: ");
                     nameOfFaculty = scanner.nextLine();
                     if(!CheckForWrongInput.checkForFacultyExistence(university.getFaculties(),nameOfFaculty)) {
                         System.out.println("There is no faculty with name " + nameOfFaculty);
                         break;
                     }
-                    System.out.print("Enter the number of group: ");
+                    System.out.println("Enter the number of group: ");
                     numberOfGroup = CheckForWrongInput.checkForWrongInput();
                     if(!CheckForWrongInput.checkForGroupExistence(numberOfGroup,nameOfFaculty,
                             university.getFaculties())) {
                         System.out.println("There is no number " + numberOfGroup + "group in faculty" + nameOfFaculty);
                     }
-                    System.out.print("Enter the name of subject: ");
+                    System.out.println("Enter the name of subject: ");
                     nameOfSubject = scanner.nextLine();
                     if(!CheckForWrongInput.checkForSubjectExistence(nameOfSubject,numberOfGroup,university.getFaculties(),
                                                                 nameOfFaculty)) {
@@ -89,13 +89,13 @@ public class Main {
                     System.out.println();
                     break;
                 case 3:
-                    System.out.print("Enter the name of faculty: ");
+                    System.out.println("Enter the name of faculty: ");
                     nameOfFaculty = scanner.nextLine();
                     if(!CheckForWrongInput.checkForFacultyExistence(university.getFaculties(),nameOfFaculty)) {
                         System.out.println("There is no faculty with name " + nameOfFaculty);
                         break;
                     }
-                    System.out.print("Enter the name of subject: ");
+                    System.out.println("Enter the name of subject: ");
                     nameOfSubject = scanner.nextLine();
                     if(!CheckForWrongInput.checkForSubjectExistence(nameOfSubject,university.getFaculties(),
                                                                     nameOfFaculty)) {
@@ -107,7 +107,7 @@ public class Main {
                     System.out.println();
                     break;
                 case 4:
-                    System.out.print("Enter the name of subject: ");
+                    System.out.println("Enter the name of subject: ");
                     nameOfSubject = scanner.nextLine();
                     if(!CheckForWrongInput.checkForSubjectExistence(nameOfSubject,university.getFaculties())) {
                         System.out.println("There is no subject with name " + nameOfSubject);
