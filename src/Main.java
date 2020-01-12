@@ -39,10 +39,25 @@ public class Main {
                 case 1:
                     System.out.println("Enter the name of faculty: ");
                     nameOfFaculty = scanner.nextLine();
+                    if(!CheckForWrongInput.checkForFacultyExistence(university.getFaculties(),nameOfFaculty)) {
+                        System.out.println("There is no faculty with name " + nameOfFaculty);
+                        break;
+                    }
                     System.out.println("Enter the number of group: ");
                     numberOfGroup = CheckForWrongInput.checkForWrongInput();
+                    if(!CheckForWrongInput.checkForGroupExistence(numberOfGroup,nameOfFaculty,
+                                                                  university.getFaculties())) {
+                        System.out.println("There is no number " + numberOfGroup + " group in faculty "
+                                            + nameOfFaculty);
+                    }
                     System.out.println("Enter the name of student: ");
                     nameOfStudent = scanner.nextLine();
+                    if(!CheckForWrongInput.checkForStudentExistence(nameOfStudent,numberOfGroup,
+                                                                   university.getFaculties(),nameOfFaculty)) {
+                        System.out.println("There is no student with name " + nameOfStudent + " in group " +
+                                            numberOfGroup + " in faculty " + nameOfFaculty);
+                        break;
+                    }
                     System.out.println("average point of student is ");
                     System.out.println(university.getAveragePointOfStudent(nameOfFaculty,numberOfGroup,
                                        nameOfStudent));
@@ -51,10 +66,23 @@ public class Main {
                 case 2:
                     System.out.print("Enter the name of faculty: ");
                     nameOfFaculty = scanner.nextLine();
+                    if(!CheckForWrongInput.checkForFacultyExistence(university.getFaculties(),nameOfFaculty)) {
+                        System.out.println("There is no faculty with name " + nameOfFaculty);
+                        break;
+                    }
                     System.out.print("Enter the number of group: ");
                     numberOfGroup = CheckForWrongInput.checkForWrongInput();
+                    if(!CheckForWrongInput.checkForGroupExistence(numberOfGroup,nameOfFaculty,
+                            university.getFaculties())) {
+                        System.out.println("There is no number " + numberOfGroup + "group in faculty" + nameOfFaculty);
+                    }
                     System.out.print("Enter the name of subject: ");
                     nameOfSubject = scanner.nextLine();
+                    if(!CheckForWrongInput.checkForSubjectExistence(nameOfSubject,numberOfGroup,university.getFaculties(),
+                                                                nameOfFaculty)) {
+                        System.out.println("There is no subject with name " + nameOfSubject);
+                        break;
+                    }
                     System.out.print("average point of subject in group is ");
                     System.out.println(university.getAverageOfConcreteSubjectOfConcreteGroup(nameOfSubject,
                                        numberOfGroup,nameOfFaculty));
@@ -63,8 +91,17 @@ public class Main {
                 case 3:
                     System.out.print("Enter the name of faculty: ");
                     nameOfFaculty = scanner.nextLine();
+                    if(!CheckForWrongInput.checkForFacultyExistence(university.getFaculties(),nameOfFaculty)) {
+                        System.out.println("There is no faculty with name " + nameOfFaculty);
+                        break;
+                    }
                     System.out.print("Enter the name of subject: ");
                     nameOfSubject = scanner.nextLine();
+                    if(!CheckForWrongInput.checkForSubjectExistence(nameOfSubject,university.getFaculties(),
+                                                                    nameOfFaculty)) {
+                        System.out.println("There is no subject with name " + nameOfSubject);
+                        break;
+                    }
                     System.out.print("average point of subject in faculty is ");
                     System.out.println(university.getAveragePointOfSubjectForFaculty(nameOfSubject,nameOfFaculty));
                     System.out.println();
@@ -72,6 +109,10 @@ public class Main {
                 case 4:
                     System.out.print("Enter the name of subject: ");
                     nameOfSubject = scanner.nextLine();
+                    if(!CheckForWrongInput.checkForSubjectExistence(nameOfSubject,university.getFaculties())) {
+                        System.out.println("There is no subject with name " + nameOfSubject);
+                        break;
+                    }
                     System.out.print("average point of subject in university is ");
                     System.out.println(university.getAveragePointOfSubjectForUniversity(nameOfSubject));
                     System.out.println();
@@ -80,6 +121,8 @@ public class Main {
                     isProgramContinuing = false;
                     System.out.println("Program is stopped");
                     break;
+                default:
+                    System.out.println("Please write a correct number");
             }
         }
     }

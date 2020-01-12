@@ -8,6 +8,10 @@ public class Student {
     private String[] subjects;
     Scanner scanner = new Scanner(System.in);
 
+    public String[] getSubjects() {
+        return subjects;
+    }
+
     public String getName() {
         return name;
     }

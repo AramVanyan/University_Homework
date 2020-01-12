@@ -5,6 +5,14 @@ public class Group {
     private Student[] students;
     private Scanner scanner = new Scanner(System.in);
 
+    public Student[] getStudents() {
+        return students;
+    }
+
+    public int getNumberOfGroup() {
+        return numberOfGroup;
+    }
+
     public void setNumberOfGroup(int numberOfGroup) {
         this.numberOfGroup = numberOfGroup;
     }

@@ -5,6 +5,9 @@ public class University {
     private Faculty[] faculties;
     private Scanner scanner = new Scanner(System.in);
 
+    public Faculty[] getFaculties() {
+        return faculties;
+    }
 
     public void setNameOfUniversity(String nameOfUniversity) {
         this.nameOfUniversity = nameOfUniversity;

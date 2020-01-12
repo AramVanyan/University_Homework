@@ -7,6 +7,10 @@ public class Faculty {
         return nameOfFaculty;
     }
 
+    public Group[] getGroups() {
+        return groups;
+    }
+
     public void setNameOfFaculty(String nameOfFaculty) {
         this.nameOfFaculty = nameOfFaculty;
     }
