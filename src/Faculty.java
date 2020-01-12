@@ -45,5 +45,14 @@ public class Faculty {
         return averagePointOfSubjectForFaculty/groups.length;
     }
 
-//    public
+    public int checkForNumberOfGroupsTeachingSubject(String nameOfSubject) {
+        int numberOfGroupsTeachingSubject = 0;
+
+        for (int i = 0; i < numberOfGroups; i++) {
+            if (groups[i].checkForStudentsLearningSubject(nameOfSubject)) {
+                numberOfGroupsTeachingSubject++;
+            }
+        }
+        return numberOfGroupsTeachingSubject;
+    }
 }

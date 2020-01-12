@@ -67,4 +67,16 @@ public class Group {
 
         return averagePointOfSubject/students.length;
     }
+
+    public boolean checkForStudentsLearningSubject(String nameOfSubject) {
+        boolean learningSubject = false;
+        for (int i = 0; i < students.length; i++) {
+            if (students[i].isLearning(nameOfSubject)) {
+                learningSubject = true;
+                break;
+            }
+        }
+
+        return learningSubject;
+    }
 }

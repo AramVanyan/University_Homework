@@ -58,19 +58,26 @@ public class University {
     }
 
     public double getAveragePointOfSubjectForUniversity(String nameOfSubject) {
+        int numberOfFacultiesTeachingSubject;
         double averagePointOfSubjectForUniversity = 0;
 
         for (int i = 0; i < faculties.length; i++) {
             averagePointOfSubjectForUniversity += faculties[i].getAveragePointOfSubjectForFaculty(nameOfSubject);
         }
-        return averagePointOfSubjectForUniversity/faculties.length;
+
+        numberOfFacultiesTeachingSubject = checkForNumberOfFacultiesTeachingSubject(nameOfSubject);
+        return averagePointOfSubjectForUniversity/numberOfFacultiesTeachingSubject;
     }
 
-//    public int checkForNumberOfFacultiesTeachingSubject(String nameOfSubject) {
-//        for (int i = 0; i < faculties.length; i++) {
-//
-//        }
-//
-//        return 0;
-//    }
+    public int checkForNumberOfFacultiesTeachingSubject(String nameOfSubject) {
+        int numberOfFacultiesTeachingSubject = 0;
+
+        for (int i = 0; i < faculties.length; i++) {
+            if (faculties[i].checkForNumberOfGroupsTeachingSubject(nameOfSubject) > 0) {
+                numberOfFacultiesTeachingSubject++;
+            }
+        }
+
+        return numberOfFacultiesTeachingSubject;
+    }
 }
