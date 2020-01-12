@@ -30,7 +30,7 @@ public class Main {
             try {
                 action = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException exception) {
-                System.out.println("Write a right number: ");
+                System.out.println("Please write a number: ");
                 continue;
             }
             System.out.println();
@@ -49,6 +49,7 @@ public class Main {
                                                                   university.getFaculties())) {
                         System.out.println("There is no number " + numberOfGroup + " group in faculty "
                                             + nameOfFaculty);
+                        break;
                     }
                     System.out.println("Enter the name of student: ");
                     nameOfStudent = scanner.nextLine();
