@@ -1,10 +1,7 @@
-import java.util.Scanner;
-
 public class Faculty {
     private String nameOfFaculty;
     private int numberOfGroups;
     private Group[] groups;
-    private Scanner scanner = new Scanner(System.in);
 
     public String getNameOfFaculty() {
         return nameOfFaculty;

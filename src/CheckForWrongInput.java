@@ -18,7 +18,7 @@ public class CheckForWrongInput {
                     }
                     return input;
                 }
-            } catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.out.print("Please enter a number: ");
             }
         }

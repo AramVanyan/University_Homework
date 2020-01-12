@@ -25,7 +25,7 @@ public class University {
         int indexOfNecessaryFaculty = 0;
 
         for (int i = 0; i < faculties.length; i++) {
-            if(faculties[i].getNameOfFaculty().equals(nameOfFaculty)){
+            if (faculties[i].getNameOfFaculty().equals(nameOfFaculty)) {
                 indexOfNecessaryFaculty = i;
                 break;
             }

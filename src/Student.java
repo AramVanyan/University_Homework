@@ -85,7 +85,7 @@ public class Student {
         }
     }
 
-    public double getAveragePointOfStudent(){
+    public double getAveragePointOfStudent() {
         double sumOfMarks = 0 ;
         for (int i = 0; i <marks.length ; i++) {
             sumOfMarks += marks[i];
@@ -98,7 +98,7 @@ public class Student {
         boolean learns = false;
 
         for (int i = 0; i < subjects.length; i++) {
-            if(subjects[i].equals(nameOfSubject)) {
+            if (subjects[i].equals(nameOfSubject)) {
                 learns = true;
                 break;
             }

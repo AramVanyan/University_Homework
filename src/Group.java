@@ -30,11 +30,11 @@ public class Group {
         }
     }
 
-    public double getAveragePointOfStudent(String nameOfStudent){
+    public double getAveragePointOfStudent(String nameOfStudent) {
         int indexOfNecessaryStudent = 0;
 
         for (int i = 0; i < students.length; i++) {
-            if(students[i].getName().equals(nameOfStudent)) {
+            if (students[i].getName().equals(nameOfStudent)) {
                 indexOfNecessaryStudent = i;
             }
         }
@@ -45,7 +45,7 @@ public class Group {
         double averagePointOfSubject = 0;
 
         for (int i = 0; i < students.length ; i++) {
-            if(students[i].isLearning(nameOfSubject)){
+            if (students[i].isLearning(nameOfSubject)) {
                 averagePointOfSubject += students[i].getMarkOfSubject(nameOfSubject);
             }
         }
