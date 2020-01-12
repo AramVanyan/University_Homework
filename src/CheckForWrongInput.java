@@ -135,6 +135,4 @@ public class CheckForWrongInput {
         }
         return false;
     }
-
-
 }
