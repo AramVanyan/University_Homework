@@ -46,6 +46,7 @@ public class Main {
                     System.out.println("average point of student is ");
                     System.out.println(university.getAveragePointOfStudent(nameOfFaculty,numberOfGroup,
                                        nameOfStudent));
+                    System.out.println();
                     break;
                 case 2:
                     System.out.print("Enter the name of faculty: ");
@@ -57,6 +58,7 @@ public class Main {
                     System.out.print("average point of subject in group is ");
                     System.out.println(university.getAverageOfConcreteSubjectOfConcreteGroup(nameOfSubject,
                                        numberOfGroup,nameOfFaculty));
+                    System.out.println();
                     break;
                 case 3:
                     System.out.print("Enter the name of faculty: ");
@@ -65,15 +67,18 @@ public class Main {
                     nameOfSubject = scanner.nextLine();
                     System.out.print("average point of subject in faculty is ");
                     System.out.println(university.getAveragePointOfSubjectForFaculty(nameOfSubject,nameOfFaculty));
+                    System.out.println();
                     break;
                 case 4:
                     System.out.print("Enter the name of subject: ");
                     nameOfSubject = scanner.nextLine();
                     System.out.print("average point of subject in university is ");
                     System.out.println(university.getAveragePointOfSubjectForUniversity(nameOfSubject));
+                    System.out.println();
                     break;
                 case 5:
                     isProgramContinuing = false;
+                    System.out.println("Program is stopped");
                     break;
             }
         }

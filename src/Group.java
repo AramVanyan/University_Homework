@@ -1,24 +1,9 @@
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Group {
     private int numberOfGroup;
-    private int numberOfStudents;
     private Student[] students;
-    Scanner scanner = new Scanner(System.in);
-
-    public int getNumberOfGroup() {
-        return numberOfGroup;
-    }
-
-    public int getNumberOfStudents() {
-        return numberOfStudents;
-    }
-
-    public void setNumberOfStudents(int numberOfStudents) {
-        this.numberOfStudents = numberOfStudents;
-    }
+    private Scanner scanner = new Scanner(System.in);
 
     public void setNumberOfGroup(int numberOfGroup) {
         this.numberOfGroup = numberOfGroup;
@@ -69,14 +54,14 @@ public class Group {
     }
 
     public boolean checkForStudentsLearningSubject(String nameOfSubject) {
-        boolean learningSubject = false;
+        boolean islearningSubject = false;
+
         for (int i = 0; i < students.length; i++) {
             if (students[i].isLearning(nameOfSubject)) {
-                learningSubject = true;
+                islearningSubject = true;
                 break;
             }
         }
-
-        return learningSubject;
+        return islearningSubject;
     }
 }

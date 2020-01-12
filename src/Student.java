@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Student {
@@ -13,13 +12,7 @@ public class Student {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     private Student(StudentBuilder studentBuilder) {
-//        this.numberOfMarks = studentBuilder.numberOfMandatoryMarks;
-//        this.numberOfSubjects = studentBuilder.numberOfMandatorySubjects;
         this.name = studentBuilder.name;
         this.numberOfMarks = studentBuilder.minimalNumberOfMarks;
         this.numberOfSubjects = studentBuilder.numberOfMandatorySubjects;
@@ -112,6 +105,5 @@ public class Student {
         }
         return learns;
     }
-
 }
 

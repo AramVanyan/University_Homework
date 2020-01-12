@@ -33,7 +33,8 @@ public class University {
         return faculties[indexOfNecessaryFaculty].getAveragePointOfStudent(numberOfGroup,nameOfStudent);
     }
 
-    public double getAverageOfConcreteSubjectOfConcreteGroup(String nameOfSubject,int numberOfGroup,String nameOfFaculty){
+    public double getAverageOfConcreteSubjectOfConcreteGroup(String nameOfSubject,int numberOfGroup,
+                                                             String nameOfFaculty){
         int indexOfNecessaryFaculty = 0;
 
         for (int i = 0; i < faculties.length; i++) {
@@ -42,7 +43,8 @@ public class University {
                 break;
             }
         }
-        return faculties[indexOfNecessaryFaculty].getAverageOfConcreteSubjectOfConcreteGroup(numberOfGroup,nameOfSubject);
+        return faculties[indexOfNecessaryFaculty].getAverageOfConcreteSubjectOfConcreteGroup(numberOfGroup,
+                                                                                             nameOfSubject);
     }
 
     public double getAveragePointOfSubjectForFaculty(String nameOfSubject,String nameOfFaculty) {
@@ -64,7 +66,6 @@ public class University {
         for (int i = 0; i < faculties.length; i++) {
             averagePointOfSubjectForUniversity += faculties[i].getAveragePointOfSubjectForFaculty(nameOfSubject);
         }
-
         numberOfFacultiesTeachingSubject = checkForNumberOfFacultiesTeachingSubject(nameOfSubject);
         return averagePointOfSubjectForUniversity/numberOfFacultiesTeachingSubject;
     }
@@ -77,7 +78,6 @@ public class University {
                 numberOfFacultiesTeachingSubject++;
             }
         }
-
         return numberOfFacultiesTeachingSubject;
     }
 }
