@@ -11,6 +11,10 @@ public class University {
         return faculties;
     }
 
+    public String getNameOfUniversity() {
+        return nameOfUniversity;
+    }
+
     public void setNameOfUniversity(String nameOfUniversity) {
         this.nameOfUniversity = nameOfUniversity;
     }
