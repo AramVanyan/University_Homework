@@ -1,3 +1,5 @@
+package main;
+
 import java.util.Scanner;
 
 public class CheckForWrongInput {
@@ -9,7 +11,7 @@ public class CheckForWrongInput {
             try {
                 input = Integer.parseInt(scanner.nextLine());
                 if(nameOfSpecificGroup.equals("marks") && (input<0 || input>10)){
-                    System.out.println("mark should be in range of 1-10: ");
+                    System.out.println("mark should be in range of 0-10: ");
                 } else {
                     if (input <= 0 && !(nameOfSpecificGroup.equals("marks"))) {
                         System.out.println("Number of " + nameOfSpecificGroup + " must be greater than 0");
