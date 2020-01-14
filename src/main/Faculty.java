@@ -44,8 +44,9 @@ public class Faculty {
         for (int i = 0; i < numberOfGroups; i++) {
             averagePointOfSubjectForFaculty += groups[i].getAverageOfConcreteSubject(nameOfSubject);
         }
+        if (checkForNumberOfGroupsTeachingSubject(nameOfSubject) == 0) return 0;
 
-        return averagePointOfSubjectForFaculty/groups.length;
+        return averagePointOfSubjectForFaculty/checkForNumberOfGroupsTeachingSubject(nameOfSubject);
     }
 
     public int checkForNumberOfGroupsTeachingSubject(String nameOfSubject) {

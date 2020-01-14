@@ -72,6 +72,7 @@ public class University {
             averagePointOfSubjectForUniversity += faculties[i].getAveragePointOfSubjectForFaculty(nameOfSubject);
         }
         numberOfFacultiesTeachingSubject = checkForNumberOfFacultiesTeachingSubject(nameOfSubject);
+        if (checkForNumberOfFacultiesTeachingSubject(nameOfSubject) == 0) return 0;
         return averagePointOfSubjectForUniversity/numberOfFacultiesTeachingSubject;
     }
 

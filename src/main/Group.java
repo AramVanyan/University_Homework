@@ -61,6 +61,7 @@ public class Group {
                 numberOfStudentsLearningSubject++;
             }
         }
+        if (numberOfStudentsLearningSubject==0) return 0;
 
         return averagePointOfSubject/numberOfStudentsLearningSubject;
     }
