@@ -7,19 +7,19 @@ public class Group {
     private Student[] students;
     private Scanner scanner = new Scanner(System.in);
 
-    public Student[] getStudents() {
+    Student[] getStudents() {
         return students;
     }
 
-    public int getNumberOfGroup() {
+    int getNumberOfGroup() {
         return numberOfGroup;
     }
 
-    public void setNumberOfGroup(int numberOfGroup) {
+    void setNumberOfGroup(int numberOfGroup) {
         this.numberOfGroup = numberOfGroup;
     }
 
-    public void initializeStudents(int numberOfStudents) {
+    void initializeStudents(int numberOfStudents) {
         int mark,numberOfSubjects;
         String subject,name;
         students = new Student[numberOfStudents];
@@ -40,7 +40,7 @@ public class Group {
         }
     }
 
-    public double getAveragePointOfStudent(String nameOfStudent) {
+    double getAveragePointOfStudent(String nameOfStudent) {
         int indexOfNecessaryStudent = 0;
 
         for (int i = 0; i < students.length; i++) {
@@ -51,7 +51,7 @@ public class Group {
         return students[indexOfNecessaryStudent].getAveragePointOfStudent();
     }
 
-    public double getAverageOfConcreteSubject(String nameOfSubject) {
+    double getAverageOfConcreteSubject(String nameOfSubject) {
         double averagePointOfSubject = 0;
         int numberOfStudentsLearningSubject = 0;
 
@@ -61,12 +61,13 @@ public class Group {
                 numberOfStudentsLearningSubject++;
             }
         }
-        if (numberOfStudentsLearningSubject==0) return 0;
-
+        if (numberOfStudentsLearningSubject == 0) {
+            return 0;
+        }
         return averagePointOfSubject/numberOfStudentsLearningSubject;
     }
 
-    public boolean checkForStudentsLearningSubject(String nameOfSubject) {
+    boolean checkForStudentsLearningSubject(String nameOfSubject) {
         boolean islearningSubject = false;
 
         for (int i = 0; i < students.length; i++) {

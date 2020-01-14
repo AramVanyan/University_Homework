@@ -7,11 +7,11 @@ import custom_exceptions.NoSubjectException;
 
 import java.util.Scanner;
 
-public class CheckForWrongInput {
+class CheckForWrongInput {
     private static Scanner scanner = new Scanner(System.in);
     private static int input;
 
-    public static int checkForWrongInput(String nameOfSpecificGroup){
+    static int checkForWrongInput(String nameOfSpecificGroup){
         while(true){
             try {
                 input = Integer.parseInt(scanner.nextLine());
@@ -31,7 +31,7 @@ public class CheckForWrongInput {
         }
     }
 
-    public static int checkForWrongInput() {
+    static int checkForWrongInput() {
         while (true) {
             try {
                 input = Integer.parseInt(scanner.nextLine());
@@ -42,7 +42,7 @@ public class CheckForWrongInput {
         }
     }
 
-    public static boolean checkForFacultyExistence(Faculty[] faculties,String nameOfFaculty) {
+    static boolean checkForFacultyExistence(Faculty[] faculties, String nameOfFaculty) {
         for (int i = 0; i < faculties.length; i++) {
             if (faculties[i].getNameOfFaculty().equals(nameOfFaculty)) {
                 return true;
@@ -51,8 +51,8 @@ public class CheckForWrongInput {
         throw new NoFacultyException();
     }
 
-    public static boolean checkForGroupExistence(int numberOfGroup,String nameOfFaculty,
-                                                 Faculty[] faculties) {
+    static boolean checkForGroupExistence(int numberOfGroup, String nameOfFaculty,
+                                          Faculty[] faculties) {
         for (int i = 0; i < faculties.length; i++) {
             if (faculties[i].getNameOfFaculty().equals(nameOfFaculty)) {
                 for (int j = 0; j < faculties[i].getGroups().length; j++) {
@@ -65,8 +65,8 @@ public class CheckForWrongInput {
         throw new NoGroupException();
     }
 
-    public static boolean checkForStudentExistence(String nameOfStudent,int numberOfGroup,Faculty[] faculties,
-                                                   String nameOfFaculty) {
+    static boolean checkForStudentExistence(String nameOfStudent, int numberOfGroup, Faculty[] faculties,
+                                            String nameOfFaculty) {
         for (int i = 0; i < faculties.length; i++) {
             if (faculties[i].getNameOfFaculty().equals(nameOfFaculty)) {
                 for (int j = 0; j < faculties[i].getGroups().length; j++) {
@@ -83,8 +83,8 @@ public class CheckForWrongInput {
         throw new NoStudentException();
     }
 
-    public static boolean checkForSubjectExistence(String nameOfSubject,int numberOfGroup,Faculty[] faculties,
-                                                   String nameOfFaculty) {
+    static boolean checkForSubjectExistence(String nameOfSubject, int numberOfGroup, Faculty[] faculties,
+                                            String nameOfFaculty) {
 
         for (int i = 0; i < faculties.length; i++) {
             if (faculties[i].getNameOfFaculty().equals(nameOfFaculty)) {
@@ -106,8 +106,8 @@ public class CheckForWrongInput {
         throw new NoSubjectException();
     }
 
-    public static boolean checkForSubjectExistence(String nameOfSubject,Faculty[] faculties,
-                                                   String nameOfFaculty) {
+    static boolean checkForSubjectExistence(String nameOfSubject, Faculty[] faculties,
+                                            String nameOfFaculty) {
         for (int i = 0; i < faculties.length; i++) {
             if (faculties[i].getNameOfFaculty().equals(nameOfFaculty)) {
                 for (int j = 0; j < faculties[i].getGroups().length; j++) {
@@ -126,7 +126,7 @@ public class CheckForWrongInput {
         throw new NoSubjectException();
     }
 
-    public static boolean checkForSubjectExistence(String nameOfSubject,Faculty[] faculties) {
+    static boolean checkForSubjectExistence(String nameOfSubject, Faculty[] faculties) {
         for (int i = 0; i < faculties.length; i++) {
                 for (int j = 0; j < faculties[i].getGroups().length; j++) {
                     for (int k = 0; k < faculties[i].getGroups()[j].getStudents().length; k++) {

@@ -2,19 +2,19 @@ package main;
 
 import java.util.Scanner;
 
-public class Student {
+class Student {
     private String name;
     private int numberOfMarks;
     private int numberOfSubjects;
     private int[] marks;
     private String[] subjects;
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
-    public String[] getSubjects() {
+    String[] getSubjects() {
         return subjects;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
@@ -28,7 +28,7 @@ public class Student {
         this.marks[numberOfMarks-1] = studentBuilder.markOfMandatorySubject;
     }
 
-    public static class StudentBuilder {
+    static class StudentBuilder {
         private String name;
         private int numberOfMandatorySubjects = 1;
         private int minimalNumberOfMarks = 1;
@@ -36,19 +36,18 @@ public class Student {
         private int markOfMandatorySubject;
 
 
-        public StudentBuilder(String name, String mandatorySubject, int markOfMandatorySubject) {
+        StudentBuilder(String name, String mandatorySubject, int markOfMandatorySubject) {
             this.name = name;
             this.mandatorySubject = mandatorySubject;
             this.markOfMandatorySubject = markOfMandatorySubject;
         }
 
-        public Student build() {
-            Student student = new Student(this);
-            return student;
+        Student build() {
+            return new Student(this);
         }
     }
 
-    public int getMarkOfSubject(String subject) {
+    int getMarkOfSubject(String subject) {
         int indexOfMarkInCorrespondingArray = -1;
 
         for (int i = 0; i < numberOfSubjects; i++) {
@@ -60,7 +59,7 @@ public class Student {
         return marks[indexOfMarkInCorrespondingArray];
     }
 
-    public void addMark(int mark) {
+    private void addMark(int mark) {
         int previousLengthOfArray = this.numberOfMarks;
         int[] temp = new int[++this.numberOfMarks];
 
@@ -71,7 +70,7 @@ public class Student {
         this.marks = temp;
     }
 
-    public void addSubject(String subject) {
+    private void addSubject(String subject) {
         int previousLengthOfArray = this.numberOfSubjects;
         String[] temp = new String[++this.numberOfSubjects];
 
@@ -82,7 +81,7 @@ public class Student {
         this.subjects = temp;
     }
 
-    public void initializeSubjects(int numberOfSubjects) {
+    void initializeSubjects(int numberOfSubjects) {
         for (int i = 1; i < numberOfSubjects ; i++) {
             System.out.print("Please enter the name of a subject: ");
             addSubject(scanner.nextLine());
@@ -91,7 +90,7 @@ public class Student {
         }
     }
 
-    public double getAveragePointOfStudent() {
+    double getAveragePointOfStudent() {
         double sumOfMarks = 0 ;
         for (int i = 0; i <marks.length ; i++) {
             sumOfMarks += marks[i];
@@ -100,7 +99,7 @@ public class Student {
 
     }
 
-    public boolean isLearning(String nameOfSubject) {
+    boolean isLearning(String nameOfSubject) {
         boolean learns = false;
 
         for (int i = 0; i < subjects.length; i++) {

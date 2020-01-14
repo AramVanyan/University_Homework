@@ -1,23 +1,23 @@
 package main;
 
-public class Faculty {
+class Faculty {
     private String nameOfFaculty;
     private int numberOfGroups;
     private Group[] groups;
 
-    public String getNameOfFaculty() {
+    String getNameOfFaculty() {
         return nameOfFaculty;
     }
 
-    public Group[] getGroups() {
+    Group[] getGroups() {
         return groups;
     }
 
-    public void setNameOfFaculty(String nameOfFaculty) {
+    void setNameOfFaculty(String nameOfFaculty) {
         this.nameOfFaculty = nameOfFaculty;
     }
 
-    public void initializeGroups(int numberOfGroups) {
+    void initializeGroups(int numberOfGroups) {
         this.numberOfGroups = numberOfGroups;
         groups = new Group[this.numberOfGroups];
         for (int i = 0; i < this.numberOfGroups; i++) {
@@ -30,26 +30,28 @@ public class Faculty {
         }
     }
 
-    public double getAveragePointOfStudent(int numberOfGroup,String nameOfStudent) {
+    double getAveragePointOfStudent(int numberOfGroup, String nameOfStudent) {
         return groups[numberOfGroup-1].getAveragePointOfStudent(nameOfStudent);
     }
 
-    public double getAverageOfConcreteSubjectOfConcreteGroup(int numberOfGroup,String nameOfSubject) {
+    double getAverageOfConcreteSubjectOfConcreteGroup(int numberOfGroup, String nameOfSubject) {
         return groups[numberOfGroup-1].getAverageOfConcreteSubject(nameOfSubject);
     }
 
-    public double getAveragePointOfSubjectForFaculty(String nameOfSubject) {
+    double getAveragePointOfSubjectForFaculty(String nameOfSubject) {
         double averagePointOfSubjectForFaculty = 0;
 
         for (int i = 0; i < numberOfGroups; i++) {
             averagePointOfSubjectForFaculty += groups[i].getAverageOfConcreteSubject(nameOfSubject);
         }
-        if (checkForNumberOfGroupsTeachingSubject(nameOfSubject) == 0) return 0;
+        if (checkForNumberOfGroupsTeachingSubject(nameOfSubject) == 0) {
+            return 0;
+        }
 
         return averagePointOfSubjectForFaculty/checkForNumberOfGroupsTeachingSubject(nameOfSubject);
     }
 
-    public int checkForNumberOfGroupsTeachingSubject(String nameOfSubject) {
+    int checkForNumberOfGroupsTeachingSubject(String nameOfSubject) {
         int numberOfGroupsTeachingSubject = 0;
 
         for (int i = 0; i < numberOfGroups; i++) {

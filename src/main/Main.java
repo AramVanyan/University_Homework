@@ -122,6 +122,7 @@ public class Main {
                     break;
                 case 5:
                     isProgramContinuing = false;
+                    System.out.println("Bye " + university.getNameOfUniversity());
                     System.out.println("Program is stopped");
                     break;
                 default:

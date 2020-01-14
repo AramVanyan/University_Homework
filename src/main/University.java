@@ -2,24 +2,24 @@ package main;
 
 import java.util.Scanner;
 
-public class University {
+class University {
     private String nameOfUniversity;
     private Faculty[] faculties;
     private Scanner scanner = new Scanner(System.in);
 
-    public Faculty[] getFaculties() {
+    Faculty[] getFaculties() {
         return faculties;
     }
 
-    public String getNameOfUniversity() {
+    String getNameOfUniversity() {
         return nameOfUniversity;
     }
 
-    public void setNameOfUniversity(String nameOfUniversity) {
+    void setNameOfUniversity(String nameOfUniversity) {
         this.nameOfUniversity = nameOfUniversity;
     }
 
-    public void initializeFaculties(int numberOfFaculties) {
+    void initializeFaculties(int numberOfFaculties) {
         faculties = new Faculty[numberOfFaculties];
         for (int i = 0; i < numberOfFaculties ; i++) {
             System.out.println("Please enter the name of faculty " + (i + 1) + ": ");
@@ -30,7 +30,7 @@ public class University {
         }
     }
 
-    public double getAveragePointOfStudent(String nameOfFaculty,int numberOfGroup,String nameOfStudent){
+    double getAveragePointOfStudent(String nameOfFaculty, int numberOfGroup, String nameOfStudent){
         int indexOfNecessaryFaculty = 0;
 
         for (int i = 0; i < faculties.length; i++) {
@@ -42,7 +42,7 @@ public class University {
         return faculties[indexOfNecessaryFaculty].getAveragePointOfStudent(numberOfGroup,nameOfStudent);
     }
 
-    public double getAverageOfConcreteSubjectOfConcreteGroup(String nameOfSubject,int numberOfGroup,
+    double getAverageOfConcreteSubjectOfConcreteGroup(String nameOfSubject,int numberOfGroup,
                                                              String nameOfFaculty){
         int indexOfNecessaryFaculty = 0;
 
@@ -56,7 +56,7 @@ public class University {
                                                                                              nameOfSubject);
     }
 
-    public double getAveragePointOfSubjectForFaculty(String nameOfSubject,String nameOfFaculty) {
+     double getAveragePointOfSubjectForFaculty(String nameOfSubject,String nameOfFaculty) {
         int indexOfNecessaryFaculty = 0;
 
         for (int i = 0; i < faculties.length; i++) {
@@ -68,7 +68,7 @@ public class University {
         return faculties[indexOfNecessaryFaculty].getAveragePointOfSubjectForFaculty(nameOfSubject);
     }
 
-    public double getAveragePointOfSubjectForUniversity(String nameOfSubject) {
+    double getAveragePointOfSubjectForUniversity(String nameOfSubject) {
         int numberOfFacultiesTeachingSubject;
         double averagePointOfSubjectForUniversity = 0;
 
@@ -76,11 +76,13 @@ public class University {
             averagePointOfSubjectForUniversity += faculties[i].getAveragePointOfSubjectForFaculty(nameOfSubject);
         }
         numberOfFacultiesTeachingSubject = checkForNumberOfFacultiesTeachingSubject(nameOfSubject);
-        if (checkForNumberOfFacultiesTeachingSubject(nameOfSubject) == 0) return 0;
+        if (checkForNumberOfFacultiesTeachingSubject(nameOfSubject) == 0) {
+            return 0;
+        }
         return averagePointOfSubjectForUniversity/numberOfFacultiesTeachingSubject;
     }
 
-    public int checkForNumberOfFacultiesTeachingSubject(String nameOfSubject) {
+    private int checkForNumberOfFacultiesTeachingSubject(String nameOfSubject) {
         int numberOfFacultiesTeachingSubject = 0;
 
         for (int i = 0; i < faculties.length; i++) {
