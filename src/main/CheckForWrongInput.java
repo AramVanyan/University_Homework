@@ -1,5 +1,10 @@
 package main;
 
+import custom_exceptions.NoFacultyException;
+import custom_exceptions.NoGroupException;
+import custom_exceptions.NoStudentException;
+import custom_exceptions.NoSubjectException;
+
 import java.util.Scanner;
 
 public class CheckForWrongInput {
@@ -43,7 +48,7 @@ public class CheckForWrongInput {
                 return true;
             }
         }
-        return false;
+        throw new NoFacultyException();
     }
 
     public static boolean checkForGroupExistence(int numberOfGroup,String nameOfFaculty,
@@ -57,7 +62,7 @@ public class CheckForWrongInput {
                 }
             }
         }
-        return false;
+        throw new NoGroupException();
     }
 
     public static boolean checkForStudentExistence(String nameOfStudent,int numberOfGroup,Faculty[] faculties,
@@ -75,7 +80,7 @@ public class CheckForWrongInput {
                 }
             }
         }
-        return false;
+        throw new NoStudentException();
     }
 
     public static boolean checkForSubjectExistence(String nameOfSubject,int numberOfGroup,Faculty[] faculties,
@@ -98,7 +103,7 @@ public class CheckForWrongInput {
                 }
             }
         }
-        return false;
+        throw new NoSubjectException();
     }
 
     public static boolean checkForSubjectExistence(String nameOfSubject,Faculty[] faculties,
@@ -118,7 +123,7 @@ public class CheckForWrongInput {
                 }
             }
         }
-        return false;
+        throw new NoSubjectException();
     }
 
     public static boolean checkForSubjectExistence(String nameOfSubject,Faculty[] faculties) {
@@ -135,6 +140,6 @@ public class CheckForWrongInput {
                     }
                 }
         }
-        return false;
+        throw new NoSubjectException();
     }
 }
