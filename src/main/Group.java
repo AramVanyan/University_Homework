@@ -53,14 +53,16 @@ public class Group {
 
     public double getAverageOfConcreteSubject(String nameOfSubject) {
         double averagePointOfSubject = 0;
+        int numberOfStudentsLearningSubject = 0;
 
         for (int i = 0; i < students.length ; i++) {
             if (students[i].isLearning(nameOfSubject)) {
                 averagePointOfSubject += students[i].getMarkOfSubject(nameOfSubject);
+                numberOfStudentsLearningSubject++;
             }
         }
 
-        return averagePointOfSubject/students.length;
+        return averagePointOfSubject/numberOfStudentsLearningSubject;
     }
 
     public boolean checkForStudentsLearningSubject(String nameOfSubject) {
