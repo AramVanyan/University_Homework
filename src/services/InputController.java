@@ -1,17 +1,14 @@
-package main;
+package services;
 
-import custom_exceptions.NoFacultyException;
-import custom_exceptions.NoGroupException;
-import custom_exceptions.NoStudentException;
-import custom_exceptions.NoSubjectException;
-
+import custom_exceptions.*;
+import main.Faculty;
 import java.util.Scanner;
 
-class InputController {
+public class InputController {
     private static Scanner scanner = new Scanner(System.in);
     private static int input;
 
-    static int checkForWrongInput(String nameOfSpecificGroup){
+    public static int checkForWrongInput(String nameOfSpecificGroup){
         while(true){
             try {
                 input = Integer.parseInt(scanner.nextLine());
@@ -31,7 +28,7 @@ class InputController {
         }
     }
 
-    static int checkForWrongInput() {
+    public static int checkForWrongInput() {
         while (true) {
             try {
                 input = Integer.parseInt(scanner.nextLine());
@@ -42,7 +39,7 @@ class InputController {
         }
     }
 
-    static boolean checkForFacultyExistence(Faculty[] faculties, String nameOfFaculty) {
+    public static boolean checkForFacultyExistence(Faculty[] faculties, String nameOfFaculty) {
         if (faculties == null) {
             return false;
         }
@@ -54,7 +51,7 @@ class InputController {
         throw new NoFacultyException();
     }
 
-    static boolean checkForGroupExistence(int numberOfGroup, String nameOfFaculty,
+    public static boolean checkForGroupExistence(int numberOfGroup, String nameOfFaculty,
                                           Faculty[] faculties) {
         if (faculties == null) {
             return false;
@@ -71,7 +68,7 @@ class InputController {
         throw new NoGroupException();
     }
 
-    static boolean checkForStudentExistence(String nameOfStudent, int numberOfGroup, Faculty[] faculties,
+    public static boolean checkForStudentExistence(String nameOfStudent, int numberOfGroup, Faculty[] faculties,
                                             String nameOfFaculty) {
         if (faculties == null) {
             return false;
@@ -92,7 +89,7 @@ class InputController {
         throw new NoStudentException();
     }
 
-    static boolean checkForSubjectExistence(String nameOfSubject, int numberOfGroup, Faculty[] faculties,
+    public static boolean checkForSubjectExistence(String nameOfSubject, int numberOfGroup, Faculty[] faculties,
                                             String nameOfFaculty) {
         if (faculties == null) {
             return false;
@@ -117,7 +114,7 @@ class InputController {
         throw new NoSubjectException();
     }
 
-    static boolean checkForSubjectExistence(String nameOfSubject, Faculty[] faculties,
+    public static boolean checkForSubjectExistence(String nameOfSubject, Faculty[] faculties,
                                             String nameOfFaculty) {
         if (faculties == null) {
             return false;
@@ -140,7 +137,7 @@ class InputController {
         throw new NoSubjectException();
     }
 
-    static boolean checkForSubjectExistence(String nameOfSubject, Faculty[] faculties) {
+    public static boolean checkForSubjectExistence(String nameOfSubject, Faculty[] faculties) {
         if (faculties == null) {
             return false;
         }
