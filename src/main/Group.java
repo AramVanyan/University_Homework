@@ -28,11 +28,11 @@ public class Group {
             System.out.print("Please enter the name of a student: ");
             name = scanner.nextLine();
             System.out.print("Please enter the number of subjects: ");
-            numberOfSubjects = CheckForWrongInput.checkForWrongInput("subjects");
+            numberOfSubjects = InputController.checkForWrongInput("subjects");
             System.out.print("Please enter the name of a subject: ");
             subject = scanner.nextLine();
             System.out.print("Please enter the mark of a subject: ");
-            mark = CheckForWrongInput.checkForWrongInput("marks");
+            mark = InputController.checkForWrongInput("marks");
             students[i] = new Student.StudentBuilder(name,subject,mark).build();
             if(numberOfSubjects > 1) {
                 students[i].initializeSubjects(numberOfSubjects);

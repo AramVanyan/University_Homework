@@ -26,7 +26,7 @@ class Faculty {
         }
         for (int i = 0; i < numberOfGroups; i++) {
             System.out.print("Please enter the number of students in group " + (i + 1) + ": ");
-            groups[i].initializeStudents(CheckForWrongInput.checkForWrongInput("groups"));
+            groups[i].initializeStudents(InputController.checkForWrongInput("groups"));
         }
     }
 

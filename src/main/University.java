@@ -26,7 +26,7 @@ class University {
             faculties[i] = new Faculty();
             faculties[i].setNameOfFaculty(scanner.next());
             System.out.print("Please enter the number of groups in faculty " + faculties[i].getNameOfFaculty() + ": ");
-            faculties[i].initializeGroups(CheckForWrongInput.checkForWrongInput("groups"));
+            faculties[i].initializeGroups(InputController.checkForWrongInput("groups"));
         }
     }
 

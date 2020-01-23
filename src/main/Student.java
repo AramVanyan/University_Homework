@@ -86,7 +86,7 @@ class Student {
             System.out.print("Please enter the name of a subject: ");
             addSubject(scanner.nextLine());
             System.out.print("Please enter the mark of a subject: ");
-            addMark(CheckForWrongInput.checkForWrongInput("marks"));
+            addMark(InputController.checkForWrongInput("marks"));
         }
     }
 
