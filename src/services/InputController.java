@@ -12,18 +12,28 @@ public class InputController {
         while(true){
             try {
                 input = Integer.parseInt(scanner.nextLine());
-                if(nameOfSpecificGroup.equals("marks") && (input<0 || input>10)){
-                    System.out.println("mark should be in range of 0-10: ");
-                } else {
                     if (input <= 0 && !(nameOfSpecificGroup.equals("marks"))) {
                         System.out.println("Number of " + nameOfSpecificGroup + " must be greater than 0");
                         System.out.print("Try again: ");
                         continue;
                     }
                     return input;
-                }
             } catch (NumberFormatException e) {
                 System.out.print("Please enter a number: ");
+            }
+        }
+    }
+
+    public static int checkForCorrectMarksInput() {
+        while (true) {
+            try {
+                input = Integer.parseInt(scanner.nextLine());
+                if (input < 0 || input > 10) {
+                    System.out.println("mark should be in range of 0-10: ");
+                }
+                return input;
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a number: ");
             }
         }
     }
@@ -48,7 +58,7 @@ public class InputController {
                 return true;
             }
         }
-        throw new NoFacultyException();
+        throw new NoFacultyException("NoFacultyException");
     }
 
     public static boolean checkForGroupExistence(int numberOfGroup, String nameOfFaculty,
@@ -65,7 +75,7 @@ public class InputController {
                 }
             }
         }
-        throw new NoGroupException();
+        throw new NoGroupException("NoGroupException");
     }
 
     public static boolean checkForStudentExistence(String nameOfStudent, int numberOfGroup, Faculty[] faculties,
@@ -86,7 +96,7 @@ public class InputController {
                 }
             }
         }
-        throw new NoStudentException();
+        throw new NoStudentException("NoStudentException");
     }
 
     public static boolean checkForSubjectExistence(String nameOfSubject, int numberOfGroup, Faculty[] faculties,
@@ -111,7 +121,7 @@ public class InputController {
                 }
             }
         }
-        throw new NoSubjectException();
+        throw new NoSubjectException("NoSubjectException");
     }
 
     public static boolean checkForSubjectExistence(String nameOfSubject, Faculty[] faculties,
@@ -134,7 +144,7 @@ public class InputController {
                 }
             }
         }
-        throw new NoSubjectException();
+        throw new NoSubjectException("NoSubjectException");
     }
 
     public static boolean checkForSubjectExistence(String nameOfSubject, Faculty[] faculties) {
@@ -154,6 +164,6 @@ public class InputController {
                     }
                 }
         }
-        throw new NoSubjectException();
+        throw new NoSubjectException("NoSubjectException");
     }
 }

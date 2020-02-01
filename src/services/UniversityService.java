@@ -2,6 +2,9 @@ package services;
 
 import main.Faculty;
 import main.University;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class UniversityService {
@@ -28,7 +31,7 @@ public class UniversityService {
                 break;
             }
         }
-        return FacultyService.getAveragePointOfStudent(numberOfGroup,nameOfStudent,faculties[indexOfNecessaryFaculty].getGroups());
+        return round(FacultyService.getAveragePointOfStudent(numberOfGroup,nameOfStudent,faculties[indexOfNecessaryFaculty].getGroups()),2);
     }
 
     public static double getAverageOfConcreteSubjectOfConcreteGroup(String nameOfSubject,int numberOfGroup,
@@ -41,7 +44,7 @@ public class UniversityService {
                 break;
             }
         }
-        return FacultyService.getAverageOfConcreteSubjectOfConcreteGroup(numberOfGroup,nameOfSubject,faculties[indexOfNecessaryFaculty].getGroups());
+        return round(FacultyService.getAverageOfConcreteSubjectOfConcreteGroup(numberOfGroup,nameOfSubject,faculties[indexOfNecessaryFaculty].getGroups()),2);
     }
 
     public static double getAveragePointOfSubjectForFaculty(String nameOfSubject,String nameOfFaculty,Faculty[] faculties) {
@@ -53,7 +56,7 @@ public class UniversityService {
                 break;
             }
         }
-        return FacultyService.getAveragePointOfSubjectForFaculty(nameOfSubject,faculties[indexOfNecessaryFaculty].getGroups());
+        return round(FacultyService.getAveragePointOfSubjectForFaculty(nameOfSubject,faculties[indexOfNecessaryFaculty].getGroups()),2);
     }
 
     public static double getAveragePointOfSubjectForUniversity(String nameOfSubject,Faculty[] faculties) {
@@ -68,7 +71,7 @@ public class UniversityService {
         if (checkForNumberOfFacultiesTeachingSubject(nameOfSubject,faculties) == 0) {
             return 0;
         }
-        return averagePointOfSubjectForUniversity/numberOfFacultiesTeachingSubject;
+        return round(averagePointOfSubjectForUniversity/numberOfFacultiesTeachingSubject,2);
     }
 
     public static int checkForNumberOfFacultiesTeachingSubject(String nameOfSubject,Faculty[] faculties) {
@@ -80,6 +83,14 @@ public class UniversityService {
             }
         }
         return numberOfFacultiesTeachingSubject;
+    }
+
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        BigDecimal bd = BigDecimal.valueOf(value);
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+        return bd.doubleValue();
     }
 
 }

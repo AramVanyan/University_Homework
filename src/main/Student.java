@@ -70,6 +70,17 @@ public class Student {
         public Student build() {
             return new Student(this);
         }
+
+        @Override
+        public String toString() {
+            return "StudentBuilder{" +
+                    "name='" + name + '\'' +
+                    ", numberOfMandatorySubjects=" + numberOfMandatorySubjects +
+                    ", minimalNumberOfMarks=" + minimalNumberOfMarks +
+                    ", mandatorySubject='" + mandatorySubject + '\'' +
+                    ", markOfMandatorySubject=" + markOfMandatorySubject +
+                    '}';
+        }
     }
 }
 

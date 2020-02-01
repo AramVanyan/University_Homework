@@ -2,9 +2,8 @@ package custom_exceptions;
 
 public class NoStudentException extends RuntimeException {
 
-    @Override
-    public String toString() {
-        return "NoStudentException";
+    public NoStudentException(String errorMessage) {
+        super(errorMessage);
     }
 //    throw new NoStudentException();
 }

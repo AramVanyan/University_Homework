@@ -2,9 +2,8 @@ package custom_exceptions;
 
 public class NoFacultyException extends RuntimeException {
 
-    @Override
-    public String toString() {
-        return "NoFacultyException";
+    public NoFacultyException(String errorMessage) {
+        super(errorMessage);
     }
-//    throw new NoFacultyException();
+    //    throw new NoFacultyException();
 }
